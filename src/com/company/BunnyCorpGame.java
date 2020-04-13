@@ -20,9 +20,9 @@ public class BunnyCorpGame {
 
     public BunnyCorpGame() throws IOException {
 
-        Fighter f1 = new Fighter(1000, "Alec", "Blyth", "United Kingdom", "Kirkcaldy", "Kickboxing",
+        Fighter f1 = new Fighter(1000, "Alec", "Blyth", "United Kingdom", "Fife", "Kickboxing",
                 23, 60, 168, 95, 80, 75, 87, 70);
-        Fighter f2 = new Fighter(1001, "Scott", "Robertson", "United Kingdom", "Dunfermline", "Submission",
+        Fighter f2 = new Fighter(1001, "Scott", "Fergerson", "United Kingdom", "Fife", "Submission",
                 19, 60, 168, 75, 70, 75, 90, 90);
 
 
