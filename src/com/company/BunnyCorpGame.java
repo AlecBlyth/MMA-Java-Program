@@ -60,7 +60,7 @@ public class BunnyCorpGame {
                     try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, false))) {
 
                         writer.write("1000|Alec|Blyth|United Kingdom|Kirkcaldy|Kickboxing|23|60|168|95|80|75|87|70|");
-                        writer.write("1001|Scott|Robertson|United Kingdom|Dunfermline|Submission|19|60|168|75|70|75|90|90|");
+                        writer.write("1001|Scott|Fergerson|United Kingdom|Dunfermline|Submission|19|60|168|75|70|75|90|90|");
 
                         for (int i = 0; i < myFighter.length; i++) {
                             if (myFighter[i] == null) {
