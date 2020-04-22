@@ -39,6 +39,10 @@ public class BunnyCorpGame {
     int fightSubOff = 35;
 
     String newline = System.getProperty("line.separator");
+    
+     private boolean gameMaths(double probabilityOfSuccess){ //Calcuates a random chance for fights based on input value.
+        return Math.random() > probabilityOfSuccess;
+    }
 
     private void startGame() throws IOException{
 
