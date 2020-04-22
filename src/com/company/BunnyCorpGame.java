@@ -318,6 +318,7 @@ private void TrainFighter() throws IOException {
                         fightMenu();
                     } else {
                         secondFighter = aMyFighter;
+                        fightMethod();
                     }
                 }
             }
