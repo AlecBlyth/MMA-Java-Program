@@ -298,7 +298,33 @@ private void TrainFighter() throws IOException {
         } while (!quit);
     }
 
-    private void match() {
+   private void fightMenu() {
 
+        int x = 0;
+        
+        System.out.println("        Pick your opponent        " + newline);
+        for (Fighter aMyFighter : myFighter) {
+            if (aMyFighter == null)
+                break;
+            x++;
+            System.out.println(x + " :" + aMyFighter.getName() + newline + " | Strength: " + aMyFighter.getStrength() + " | Speed: " + aMyFighter.getSpeed() + " | Endurance: " + aMyFighter.getEndurance() + " | Fighter ID: " + aMyFighter.getID() + newline);
+        }
+        int fighterID = in.nextInt();
+        for (Fighter aMyFighter : myFighter) {
+            if (aMyFighter != null) {
+                if (aMyFighter.getID() == fighterID) {
+                    if(fighterID == tempFighter.getID()){
+                        System.out.println("You cannot select the same fighter!");
+                        fightMenu();
+                    } else {
+                        secondFighter = aMyFighter;
+                    }
+                }
+            }
+        }
+        if (!found) {
+            System.out.println("This fighter does not exist!");
+            x = 0; //fixed issue where counter continued to increment
+        }
     }
 }
