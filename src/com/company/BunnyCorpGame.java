@@ -200,7 +200,7 @@ public class BunnyCorpGame {
         } while (!quit);
     }
 
-    private void TrainFighter() throws IOException {
+private void TrainFighter() throws IOException {
         do {
             System.out.println("|==========================================================|");
             System.out.println("|                    BunnyCorp MMA Game                    |");
@@ -209,8 +209,10 @@ public class BunnyCorpGame {
             System.out.println("|     1. Strength                                          |");
             System.out.println("|     2. Speed                                             |");
             System.out.println("|     3. Endurance                                         |");
-            System.out.println("|     4. View Fighter Stats                                |");
-            System.out.println("|     5. Finish Training                                   |");
+            System.out.println("|     4. Submission Offence                                |");
+            System.out.println("|     5. Submission Defence                                |");
+            System.out.println("|     6. View Fighter Stats                                |");
+            System.out.println("|     7. Finish Training                                   |");
             System.out.println("|==========================================================|");
             menuItem = in.nextInt();
 
@@ -222,7 +224,7 @@ public class BunnyCorpGame {
                             } else {
                                 for (Fighter aMyFighter : myFighter) {
                                     if (aMyFighter == null) {
-                                        tempFighter.setStrength(strength + 5);
+                                        tempFighter.setStrength(strength + 1);
                                         break;
                                     }
                                 }
@@ -235,7 +237,7 @@ public class BunnyCorpGame {
                     } else {
                         for (Fighter aMyFighter : myFighter) {
                             if (aMyFighter == null) {
-                                tempFighter.setSpeed(speed + 5);
+                                tempFighter.setSpeed(speed + 1);
                                 break;
                             }
                         }
@@ -248,19 +250,46 @@ public class BunnyCorpGame {
                     } else {
                         for (Fighter aMyFighter : myFighter) {
                             if (aMyFighter == null) {
-                                tempFighter.setEndurance(endurance + 5);
+                                tempFighter.setEndurance(endurance + 1);
                                 break;
                             }
                         }
                     }
                     break;
+
                 case 4:
+                    int subOff = tempFighter.getSubmissionOffence();
+                    if(tempFighter.getSubmissionOffence() == 100){
+                        System.out.print("Your fighter has maximum Submission Offence");
+                    } else {
+                        for (Fighter aMyFighter : myFighter){
+                            if(aMyFighter == null){
+                                tempFighter.setSubmissionOffence(subOff + 1);
+                            }
+                        }
+                    }
+                    break;
+                case 5:
+                    int subDef = tempFighter.getSubmissionDefence();
+                    if(tempFighter.getSubmissionDefence() == 100){
+                        System.out.print("Your fighter has maximum Submission Offence");
+                    } else {
+                        for (Fighter aMyFighter : myFighter){
+                            if(aMyFighter == null){
+                                tempFighter.setSubmissionDefence(subDef + 1);
+                            }
+                        }
+                    }
+                    break;
+                case 6:
                     System.out.println("Fighter:   "+ tempFighter.getName());
                     System.out.println("Strength:  "+ tempFighter.getStrength());
                     System.out.println("Speed:     "+ tempFighter.getSpeed());
                     System.out.println("Endurance: "+ tempFighter.getEndurance());
+                    System.out.println("Submission Offence: " + tempFighter.getSubmissionOffence());
+                    System.out.println("Submission Defence: " + tempFighter.getSubmissionDefence());
                     break;
-                case 5:
+                case 7:
                     gameMenu();
                     break;
                 case 99: //EndGame for Developers
