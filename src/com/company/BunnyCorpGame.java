@@ -173,6 +173,7 @@ public class BunnyCorpGame {
                     }
                     if (!found) {
                         System.out.println("This fighter does not exist!");
+                        x = 0; //fixed issue where counter continued to increment 
                     }
                     break;
 
